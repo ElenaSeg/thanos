@@ -101,6 +101,7 @@ func registerReceive(app *extkingpin.App) {
 			EnableExemplarStorage:          conf.tsdbMaxExemplars > 0,
 			HeadChunksWriteQueueSize:       int(conf.tsdbWriteQueueSize),
 			EnableMemorySnapshotOnShutdown: conf.tsdbMemorySnapshotOnShutdown,
+			BlockReloadInterval:            time.Minute,
 		}
 
 		// Are we running in IngestorOnly, RouterOnly or RouterIngestor mode?
